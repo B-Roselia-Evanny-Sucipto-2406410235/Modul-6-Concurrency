@@ -17,3 +17,8 @@ Jika mengakses `127.0.0.1:7878` melalui browser, kita akan melihat detail reques
 
 Sekarang, ketika mengakses `http://127.0.0.1:7878`, browser tidak lagi menunjukkan status loading, tetapi browser akan merender dan menampilkan isi dari file `hello.html`, karena sudah menerima response 200 OK dari server.
 ![Commit 2 screen capture](/assets/images/commit2.png)
+
+### Milestone 3
+Pada perubahan ini, dilakukan penambahan pengecekan kondisi. Jika klien memitna path selain `/`, maka server tidak akan memberikan respon 200 OK, melainkan mengirimkan status `HTTP/1.1 404 NOT FOUND` dan menampilkan halaman `404.html`. Kemudian, saya juga melakukan refactoring pada bagian `if` dan `else` untuk baca file dan mengirim respon. `if` digunakan sebagai pernyataan penugasaan untuk variabel `status_line` dan `filename`, memisahkan logika pembacaan file dan pengiriman respon ke luar blok condition, dan menggunakan tuple dan destructuring untuk menetapkan nilai variabel berdasarkan kondisi secara ringkas.
+![Commit 3 screen capture](/assets/images/commit3.png)
+![Commit 3 screen capture bad](/assets/images/commit3bad.png)
